@@ -42,6 +42,13 @@ def test_nested_styles():
     )
 
 
+def test_style_precedent():
+    assert (
+        chalk.red.green.underline("foo")
+        == "\u001B[31m\u001B[32m\u001B[4mfoo\u001B[24m\u001B[39m\u001B[39m"
+    )
+
+
 def test_empty_input():
     assert chalk.red() == ""
     assert chalk.red.blue.black() == ""
