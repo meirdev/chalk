@@ -48,7 +48,7 @@ class Chalk:
                         cs = ansi256(rgb_to_ansi256(*color.tuple))
                 cs_pairs.append(cs)
 
-        for i in reversed(cs_pairs):
+        for i in cs_pairs:
             string = string.replace(i.close, i.close + i.open)
 
         cs_open = "".join(i.open for i in cs_pairs)
